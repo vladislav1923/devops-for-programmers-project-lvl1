@@ -8,14 +8,14 @@ jobs:
       - uses: actions/checkout@v2
   tests:
     steps:
-      run: cd app && npm install && make ci
+      - run: cd app && npm install && make ci
     needs: setup
   build:
     steps:
-      run: cd app && make docker-build
+      - run: cd app && make docker-build
     needs: setup
   push:
     steps:
-      run: cd app && make docker-push
+      - run: cd app && make docker-push
     needs: build
 
