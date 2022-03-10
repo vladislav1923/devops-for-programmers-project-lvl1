@@ -2,16 +2,20 @@ name: push-check
 
 on: push
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+  tests:
+    steps:
+      run: cd app && npm install && make ci
+    needs: setup
+  build:
+    steps:
+      run: cd app && make docker-build
+    needs: setup
+  push:
+    steps:
+      run: cd app && make docker-push
+    needs: build
 
-      - name: Run tests
-        run: cd app && npm install && make ci
-
-      - name: Build docker image
-        run: cd app && make docker-build
-
-      - name: Push docker image
-        run: cd app && make docker-push
