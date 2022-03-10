@@ -5,7 +5,7 @@ services:
       context: app
       dockerfile: Dockerfile.production
     command: >
-      bash -c "make test"
+      bash -c "npm install && make test"
     volumes:
       - "./app:/app"
     image:
