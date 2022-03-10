@@ -26,7 +26,7 @@ docker-dev:
 	docker-compose up
 
 docker-build:
-    docker-compose -f docker-compose.yml build app
+	docker-compose -f docker-compose.yml build app
 
 docker-push:
-    docker-compose -f docker-compose.yml push app
+	docker-compose -f docker-compose.yml push app

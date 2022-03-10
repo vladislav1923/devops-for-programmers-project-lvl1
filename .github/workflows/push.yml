@@ -7,11 +7,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: run tests
+      - name: Run tests
         run: cd app && npm install && make ci
 
-      - name: build docker image
+      - name: Build docker image
         run: make docker-build
 
-      - name: push docker image
+      - name: Push docker image
         run: make docker-push
