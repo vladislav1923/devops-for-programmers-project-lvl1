@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: cd app && make docker-test
+      - run: cd app && npm install && make docker-test
