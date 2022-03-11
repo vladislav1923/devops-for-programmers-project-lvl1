@@ -7,6 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Prepare env file
+        run: cd app && make prepare-env
+
       - name: Run tests
         run: make docker-tests
 
