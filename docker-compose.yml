@@ -15,7 +15,7 @@ services:
   app:
     build:
       context: app
-      dockerfile: Dockerfile.production
+      dockerfile: ../Dockerfile.production
     command: bash -c "npm install && make test"
     volumes:
       - "./app:/app"

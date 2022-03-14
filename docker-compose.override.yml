@@ -3,7 +3,7 @@ services:
   app:
     build:
       context: app
-      dockerfile: Dockerfile
+      dockerfile: ../Dockerfile
     command: bash -c 'npm start'
     ports:
       - "8080:8080"
