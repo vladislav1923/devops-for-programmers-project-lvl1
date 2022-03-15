@@ -26,3 +26,6 @@ services:
 
 volumes:
   pgdata:
+  caddy_data:
+      external: false
+  caddy_config:
