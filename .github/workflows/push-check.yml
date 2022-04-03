@@ -11,14 +11,14 @@ jobs:
         run: cd app && make prepare-env
 
       - name: Run tests
-        run: make docker-tests
+        run: make ci
 
       - name: Build docker image
-        run: make docker-build
+        run: make build
 
       - name: Docker login
         run: docker login --username=${{ secrets.DOCKER_ID }} --password=${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push docker image
-        run: make docker-push
+        run: make push
 

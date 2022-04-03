@@ -10,7 +10,13 @@
 - Make
 
 ### Команда для запуска тестов
-`$ make docker-tests`
+`$ make ci`
 
 ### Команда для запуска проекта в режиме разработки
-`$ make docker-dev`
+`$ make dev`
+
+### Команда для сборки Docker образа
+`$ make build`
+
+### Команда для записи Docker образа в DockerHub
+`$ make build`
